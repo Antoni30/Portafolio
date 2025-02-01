@@ -30,10 +30,5 @@ window.addEventListener("scroll", () => {
   } else {
     header.style.backgroundColor = "";
   }
-  const section = document.querySelector(".container-habilidades");
-  const rect = section.getBoundingClientRect();
-
-  if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-    section.classList.add("animate");
-  }
+  
 });
