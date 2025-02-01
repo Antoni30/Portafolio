@@ -52,6 +52,9 @@
   align-items: center;
 }
 
+a{
+  text-decoration: none;
+}
 
 /*Creamos el estilos del Nabvar*/
 header{
@@ -210,23 +213,23 @@ list-style: none
 }
 
 /*Creacmos los estilo de las habilidades*/
-.barStatus{
+.barStatus {
   width: 50vw;
   height: 10px;
   background-color: rgba(7, 7, 12, 0.685);
   border-radius: 30px;
   position: relative;
 }
-.javaScript::after{
+
+.barStatus::after {
   content: '';
   position: absolute;
-  width: 60%;
   height: 10px;
   border-radius: 30px;
-  background-color: rgb(105, 151, 67);
 }
-.javaScript::before{
-  content: '60%';
+
+.barStatus::before {
+  content: attr(data-percent);
   position: absolute;
   display: flex;
   justify-content: center;
@@ -234,140 +237,132 @@ list-style: none
   width: 30px;
   height: 30px;
   border-radius: 100%;
-  background-color: rgb(105, 151, 67);
   top: -10px;
-  left: 59%;  
   z-index: 1;
 }
 
-.HTML::after{
-  content: '';
-  position: absolute;
-  width: 90%;
-  height: 10px;
-  border-radius: 30px;
-  background-color: rgb(105, 151, 67);
+.react{
+  color: black;
 }
-.HTML::before{
-  content: '90%';
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  background-color: rgb(105, 151, 67);
-  top: -10px;
-  left: 89%;  
-  z-index: 1;
+.javaScript{
+  color: black;
 }
 
-.git::after{
-  content: '';
-  position: absolute;
-  width: 80%;
-  height: 10px;
-  border-radius: 30px;
-  background-color: rgb(105, 151, 67);
-}
-.git::before{
-  content: '80%';
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  background-color: rgb(105, 151, 67);
-  top: -10px;
-  left: 79%;  
-  z-index: 1;
-}
+.javaScript::after { width: 60%; background-color: #f0db4f; }
+.javaScript::before { left: 59%; background-color: #f0db4f; }
 
-.docker::after{
-  content: '';
-  position: absolute;
-  width: 30%;
-  height: 10px;
-  border-radius: 30px;
-  background-color: rgb(105, 151, 67);
-}
-.docker::before{
-  content: '30%';
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  background-color: rgb(105, 151, 67);
-  top: -10px;
-  left: 29%;  
-  z-index: 1;
-}
+.HTML::after { width: 90%; background-color: #e44d26; }
+.HTML::before { left: 89%; background-color: #e44d26; }
 
-.react::after{
-  content: '';
-  position: absolute;
-  width: 50%;
-  height: 10px;
-  border-radius: 30px;
-  background-color: rgb(105, 151, 67);
-}
-.react::before{
-  content: '50%';
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  background-color: rgb(105, 151, 67);
-  top: -10px;
-  left: 49%;  
-  z-index: 1;
-}
-.CSS::after{
-  content: '';
-  position: absolute;
-  width: 85%;
-  height: 10px;
-  border-radius: 30px;
-  background-color: rgb(105, 151, 67);
-}
-.CSS::before{
-  content: '85%';
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  background-color: rgb(105, 151, 67);
-  top: -10px;
-  left: 84%;  
-  z-index: 1;
-}
-.containerBarStatus{
+.CSS::after { width: 85%; background-color: #264de4; }
+.CSS::before { left: 84%; background-color: #264de4; }
+
+.git::after { width: 80%; background-color: #f34f29; }
+.git::before { left: 79%; background-color: #f34f29; }
+
+.docker::after { width: 60%; background-color: #0db7ed; }
+.docker::before { left: 59%; background-color: #0db7ed; }
+
+.react::after { width: 50%; background-color: #61dbfb; }
+.react::before { left: 49%; background-color: #61dbfb; }
+
+.python::after { width: 70%; background-color: blue; }
+.python::before { left: 69%; background-color: blue; }
+
+.java::after { width: 75%; background-color: brown; }
+.java::before { left: 74%; background-color: brown; }
+
+.c::after { width: 40%; background-color: purple; }
+.c::before { left: 39%; background-color: purple; }
+
+.containerBarStatus {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
-.container-habilidades{
+
+.container-habilidades {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-.containerBarStatus label{
+
+.containerBarStatus label {
   font-size: 1.3rem;
 }
+
+/*Estilos BackEnd*/
+
+.proyectos-backend {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.proyectos-backend h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.proyectos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.proyectoBack {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyectoBack:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.proyectoBack h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.proyectoBack p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.proyectoBack a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.proyectoBack a:hover {
+  background-color: #0056b3;
+}
+
+.proyectoBack a i {
+  margin-left: 0.5rem;
+}
+
 /*Animacion*/
 @keyframes movimiento {
   from{
@@ -496,7 +491,6 @@ a{
 .contacto button:hover{
   background-color: rgb(105, 151, 67);
 }
-
 
 
 
