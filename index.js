@@ -32,3 +32,26 @@ window.addEventListener("scroll", () => {
   }
   
 });
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  fetch(this.action, {
+    method: this.method,
+    body: new FormData(this),
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      document.getElementById('contact-form').reset();
+      alert('Mensaje enviado correctamente');
+    } else {
+      alert('Error al enviar el mensaje');
+    }
+  })
+  .catch(error => {
+    alert('Error al enviar el mensaje');
+  });
+});

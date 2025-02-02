@@ -254,19 +254,18 @@
   
     <section id="contacto" class="contacto">
       <div class="contenido-seccion">
-          <h2>Contacto</h2>
-              <!-- Formulario -->
-              <div class="col">
-                  <input type="text" placeholder="Tú Nombre">
-                  <input type="text" placeholder="Número telefónico">
-                  <input type="text" placeholder="Dirección de correo">
-                  <input type="text" placeholder="Tema">
-                  <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
-                  <button>
-                      Enviar Mensaje
-                  </button>
-              </div>
+        <h2>Contacto</h2>
+        <!-- Formulario -->
+        <form id="contact-form" action="https://formspree.io/f/mldgnlko" method="POST" class="col">
+          <input type="text" name="name" placeholder="Tú Nombre" required>
+          <input type="text" name="phone" placeholder="Número telefónico" required>
+          <input type="email" name="email" placeholder="Dirección de correo" required>
+          <input type="text" name="subject" placeholder="Tema" required>
+          <textarea name="message" cols="30" rows="10" placeholder="Mensaje" required></textarea>
+          <button type="submit">Enviar Mensaje</button>
+        </form>
       </div>
+    </section>
   </section>
     <script src="index.js"></script>
   </body>
