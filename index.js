@@ -36,6 +36,14 @@ window.addEventListener("scroll", () => {
 document.getElementById('contact-form').addEventListener('submit', function(event) {
   event.preventDefault();
 
+  // Verifica que el reCAPTCHA esté resuelto
+  const recaptchaResponse = grecaptcha.getResponse();
+  if (!recaptchaResponse) {
+    alert('Por favor, completa el reCAPTCHA.');
+    return;
+  }
+
+  // Envía el formulario usando Fetch API
   fetch(this.action, {
     method: this.method,
     body: new FormData(this),
@@ -45,8 +53,8 @@ document.getElementById('contact-form').addEventListener('submit', function(even
   })
   .then(response => {
     if (response.ok) {
-      document.getElementById('contact-form').reset();
       alert('Mensaje enviado correctamente');
+      this.reset(); // Limpia los campos del formulario
     } else {
       alert('Error al enviar el mensaje');
     }
@@ -55,10 +63,3 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     alert('Error al enviar el mensaje');
   });
 });
-
-window.onload = function() { 
-  var el = document.getElementById('g-recaptcha-response'); 
-  if (el) { 
-    el.setAttribute('required', 'required'); 
-  } 
-}
