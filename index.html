@@ -9,7 +9,6 @@
       src="https://kit.fontawesome.com/29eac6c5fb.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
     <header id="header">
@@ -263,9 +262,10 @@
           <input type="email" name="email" placeholder="Dirección de correo" required>
           <input type="text" name="subject" placeholder="Tema" required>
           <textarea name="message" cols="30" rows="10" placeholder="Mensaje" required></textarea>
-          <div class="g-recaptcha" data-sitekey="6LfnNsoqAAAAALLNxtYAWLmxdDDwZjRTfvDZQAjd"></div>
+          <div class="g-recaptcha" id=""  data-sitekey="6LfnNsoqAAAAALLNxtYAWLmxdDDwZjRTfvDZQAjd"></div>
           <button type="submit">Enviar Mensaje</button>
         </form>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       </div>
     </section>
   </section>
